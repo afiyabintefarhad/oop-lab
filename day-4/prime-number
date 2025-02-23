@@ -1,0 +1,28 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class prime{
+public:
+    int n, flag = 0;
+    int isprime(){
+        for (int i = 2; i < sqrt(n); i++){
+            if (n%i == 0){
+                flag = 1;
+                break;
+            }
+        }
+        return flag;
+    }
+};
+int main(){
+    prime obj;
+    int x;
+    cin>>x;
+    obj.n = x;
+    int res = obj.isprime();
+    if(res == 1){
+        cout<<"Not a prime number"<<endl;
+    } else {
+        cout<<"is prime number"<<endl;
+    }
+}
